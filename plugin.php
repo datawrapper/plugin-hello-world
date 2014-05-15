@@ -24,6 +24,9 @@ class DatawrapperPlugin_HelloWorld extends DatawrapperPlugin {
         $app->get('/hello/:name', function($name) use ($app) {
             // it's a better idea to use a template
             $context = array('name' => $name);
+            // set context for header navigation
+            add_header_vars($context, 'hello');
+            // render context in template
             $app->render('plugins/hello-world/hello-world.twig', $context);
         });
 
