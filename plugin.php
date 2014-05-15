@@ -23,7 +23,10 @@ class DatawrapperPlugin_HelloWorld extends DatawrapperPlugin {
         // register another controller with a dynamic url
         $app->get('/hello/:name', function($name) use ($app) {
             // it's a better idea to use a template
-            $context = array('name' => $name);
+            $context = array(
+                'name' => $name,
+                'title' => 'Hello World'
+            );
             // set context for header navigation
             add_header_vars($context, 'hello');
             // render context in template
