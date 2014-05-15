@@ -1,4 +1,5 @@
 {
     "name": "hello-world",
+    "version": "0.0.1",
     "description": "This plugin demonstrates some basic plugin hooks in Datawrapper"
 }
