@@ -18,13 +18,19 @@ class DatawrapperPlugin_HelloWorld extends DatawrapperPlugin {
      * controller function
      *
      * @param app  Slim Framework instance
-     *   see http://docs.slimframework.com/#Routing-Overview
      */
     public function helloWorld($app) {
         // register controller under http://datawrapper/hello-world
         $app->get('/hello-world', function() use ($app) {
             echo "Hello World";
         });
+
+        // register another controller with a dynamic url
+        $app->get('/hello/:name', function($name) use ($app) {
+            echo "Hello $name.";
+        });
+
+        // see http://docs.slimframework.com/#Routing-Overview for more
     }
 
 }
