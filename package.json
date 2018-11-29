@@ -1,0 +1,19 @@
+{
+  "name": "datawrapper-plugin-hello-world",
+  "version": "1.0.0",
+  "description": "A plugin to demonstate plugins",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/datawrapper/plugin-hello-world.git"
+  },
+  "author": "Gregor Aisch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/datawrapper/plugin-hello-world/issues"
+  },
+  "homepage": "https://github.com/datawrapper/plugin-hello-world#readme"
+}
