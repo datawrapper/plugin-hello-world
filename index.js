@@ -6,10 +6,15 @@ module.exports = {
 
     },
     // api hooks go here
-    api({router}) {
+    api({router, models}) {
+
+        const {Charts} = models;
 
         router.get('/', (req, res) => {
-            res.status(200).send('I am a plugin!');
+            Charts.findOne().then(chart => {
+                res.status(200).send(chart.id);
+            });
+
         });
 
         router.get('/hello', (req, res) => {
