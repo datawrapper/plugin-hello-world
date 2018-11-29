@@ -8,13 +8,18 @@ module.exports = {
     // api hooks go here
     api({router, models}) {
 
-        const {Charts} = models;
+        const {Chart} = models;
 
-        router.get('/', (req, res) => {
-            Charts.findOne().then(chart => {
+        router.get('/db', (req, res) => {
+
+            Chart.findOne().then(chart => {
                 res.status(200).send(chart.id);
             });
 
+        });
+
+        router.get('/error', (req, res) => {
+            throw new Error('I am a bad plugin!');
         });
 
         router.get('/hello', (req, res) => {
