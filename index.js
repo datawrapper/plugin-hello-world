@@ -7,6 +7,11 @@ module.exports = {
     },
     // api hooks go here
     api({router}) {
+
+        router.get('/', (req, res) => {
+            res.status(200).send('I am a plugin!');
+        });
+
         router.get('/hello', (req, res) => {
             res.status(200).send('world');
         });
