@@ -28,7 +28,9 @@ module.exports = {
     },
     // if the plugin defines crons, this
     // is the place to do it
-    crons() {
-
+    crons({cron}) {
+	cron.schedule('* * * * *', () => {
+	    console.log('[cron] hello world');
+	});
     }
 }
