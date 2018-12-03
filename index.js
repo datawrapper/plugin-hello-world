@@ -6,12 +6,11 @@ module.exports = {
 
     },
     // api hooks go here
-    api({router, models}) {
+    api({router, models, config}) {
 
         const {Chart} = models;
 
         router.get('/db', (req, res) => {
-
             Chart.findOne().then(chart => {
                 res.status(200).send(chart.id);
             });
@@ -23,7 +22,7 @@ module.exports = {
         });
 
         router.get('/hello', (req, res) => {
-            res.status(200).send('world');
+            res.status(200).send(`hello ${config.plugin.name}`);
         });
     },
     // if the plugin defines crons, this
